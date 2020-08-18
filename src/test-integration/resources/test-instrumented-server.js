@@ -8,7 +8,7 @@ if (!window.jscoverage_report) {
             }
         };
 
-        json = jscoverage_serializeCoverageToJSON();
+        var json = jscoverage_serializeCoverageToJSON();
 
         var request = createRequest();
         var url = '/jscoverage-store';
@@ -268,13 +268,13 @@ if (!jsCover_isolateBrowser) {
 
     try {
         if (typeof top === 'object' && top !== null && top._$jscoverage) {
-            this._$jscoverage = top._$jscoverage;
+            var _$jscoverage = top._$jscoverage;
         }
     } catch (e) {
     }
 }
-if (!this._$jscoverage) {
-    this._$jscoverage = {};
+if (!_$jscoverage) {
+    var _$jscoverage = {};
 }
 if (! _$jscoverage['test-simple.js']) {
   _$jscoverage['test-simple.js'] = {};
