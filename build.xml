@@ -95,6 +95,7 @@
         <property name="tmpDir" value="${build.dir}/tmp"/>
         <mkdir dir="${tmpDir}"/>
         <unzip src="${com.google.javascript:closure-compiler:jar}" dest="${tmpDir}"/>
+        <unzip src="${com.google.code.gson:gson:jar}" dest="${tmpDir}"/>
         <copy todir="${tmpDir}" includeemptydirs="no">
             <fileset dir="${classes.main.dir}" />
         </copy>
@@ -165,7 +166,7 @@
                 </sourcefiles>
             </structure>
             <html destdir="${report.coverage.dir}"/>
-            <xml destfile="${report.coverage.dir}/cobertura.xml"/>
+            <xml destfile="${report.coverage.dir}/jacoco.xml"/>
             <check>
                 <rule element="BUNDLE">
                     <limit counter="LINE" value="COVEREDRATIO" minimum="0.92"/>
